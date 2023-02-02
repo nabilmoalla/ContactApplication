@@ -3,3 +3,27 @@ server:
   port: 9000
   servlet:
     context-path: /contact-manager
+
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5438/contactManager
+    username: user
+    password: password
+    driverClassName: org.postgresql.Driver
+  application:
+    name: contact-manager-service
+  profiles:
+    active: local
+
