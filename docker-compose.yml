@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+
+  service:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: contact-manager:latest
+    ports:
+      - "9001:9000"
+    depends_on:
+      - "pg-contact-manager"
+    environment:
+      - SPRING_PROFILES_ACTIVE=local
+      - POSTGRESQL_HOST=pg-contact-manager
+      - POSTGRESQL_PORT=5432
+    networks:
+      - default
+
+  pg-contact-manager:
+    image: "postgres:9.4.7"
+    ports:
+      - "5438:5432"
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=contactManager
