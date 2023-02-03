@@ -27,3 +27,8 @@ spring:
   profiles:
     active: local
 
+logging:
+  level:
+    root: INFO
+    com:
+      givaudan: DEBUG
