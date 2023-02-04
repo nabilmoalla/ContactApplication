@@ -9,7 +9,7 @@ services:
       dockerfile: Dockerfile
     image: contact-manager:latest
     ports:
-      - "9001:9000"
+      - "9000:9000"
     depends_on:
       - "pg-contact-manager"
     environment:
