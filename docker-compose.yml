@@ -27,3 +27,5 @@ services:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=contactManager
+    networks:
+      - default

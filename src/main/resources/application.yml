@@ -18,7 +18,7 @@ spring:
             non_contextual_creation: true
 
   datasource:
-    url: jdbc:postgresql://localhost:5438/contactManager
+    url: jdbc:postgresql://${POSTGRESQL_HOST:localhost}:${POSTGRESQL_PORT:5438}/${POSTGRESQL_DB:contactManager}
     username: user
     password: password
     driverClassName: org.postgresql.Driver
